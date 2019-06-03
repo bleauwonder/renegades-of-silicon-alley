@@ -1,3 +1,12 @@
 # renegades-of-silicon-alley
 
-#Rafaella Nicoletti
+
+### Anahis Barrie
+
+### Elyza Bleau!
+
+### Alexander Vellios!
+
+### Rafaella Nicoletto
+
+
