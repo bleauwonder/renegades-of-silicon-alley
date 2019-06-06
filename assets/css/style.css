@@ -4,3 +4,8 @@
 body {
     background-image: url("assets/images/vines.jpg")
 }
+
+#map {
+    height: 400px;
+    width: 100%;
+}
