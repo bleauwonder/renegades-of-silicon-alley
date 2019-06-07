@@ -8,41 +8,40 @@
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css"  media="screen,projection"/>
-      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Fredericka+the+Great&display=swap" rel="stylesheet">
       <!-- Link Project CSS -->
       <link type="text/css" rel="stylesheet" href="assets/css/style.css"/>
-      <!--Let browser know website is optimized for mobile-->
+      <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great&display=swap" rel="stylesheet">
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
 
     <body>
+           
         <nav>
             <div class="nav-wrapper green darken-2">
-              <a href="#" class="brand-logo right">Renegade Trailbrews</a>
+              <a href="#" class="brand-logo center">Renegade Trailbrews</a>
               <ul id="nav-mobile" class="left hide-on-med-and-down">
                 <li><a href="#">About</a></li>
                 <li><a href="#">MeetUp</a></li>
                 <li><a href="#">Contact</a></li>
               </ul>
             </div>
-          </nav>
+        </nav>
 
-          <p>1. ALLOW YOUR LOCATION</p>
-    <p>2. CLICK AGAIN TO DISPLAY THE MAP AND TRAILS AROUND YOU</p>
+    <section class="container center">
+          <p>Click to Allow Location!</p>
+            <button id="loc-button">CLICK</button>
+                <p id="demo"></p>
+                    <h3>Find My Trails</h3>
+                        <div id="map" height="400px" width="100%"></div>
+    </section>
+
     
-    <button id="loc-button">CLICK</button>
-    
-    <p id="demo"></p>
-    
-    <h1>My Google Map</h1>
-        <div id="map" height="400px" width="100%"></div>
-
-
-
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKZ95YJGcmSmTi1q8vk3RDOQdoHFPD-78&callback=initMap">
     </script>
-      
-    
+      <script type="text/javascript" src="assets/javascript/app.js"></script>
+    </body>
+  </html>
           
           
 
@@ -101,9 +100,5 @@
 
 
     
-    
-      <script type="text/javascript" src="assets/javascript/app.js"></script>
-   
-    </body>
-  </html>
+
         
