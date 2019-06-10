@@ -2,12 +2,14 @@
 
 body {
     font-family: 'Cabin Sketch', cursive;
-    background-image: url("../images/vines-d.jpg");
     color: white;
+    background-color: rgb(138, 78, 0);
 }
 
 .nav-wrapper {
     font-family: 'Cabin Sketch', cursive;
+    background-image: url("../images/vines-d.jpg");
+    /* height: 200px !important; */
 }
 
 
@@ -29,8 +31,12 @@ body {
     width: 100%;
 }
 
+.mapTitle {
+    margin-left: 10px;
+}
+
 #loc-button {
-        width: 140px;
+        width: 200px;
         height: 45px;
         font-family: 'Fredericka the Great', cursive;
         font-size: 11px;
@@ -45,6 +51,9 @@ body {
         transition: all 0.3s ease 0s;
         cursor: pointer;
         outline: none;
+        margin-bottom: 20px;
+        text-align: center;
+        vertical-align: middle;
     }
     
     #loc-button:hover {
@@ -53,3 +62,40 @@ body {
         color: #fff;
         transform: translateY(-7px);
       }
+
+    #allenQuote {
+        font-size: 24px;
+        font-style: italic;
+        margin-bottom: 10px;
+    }
+
+    #map {
+        height: 400px;
+        width: 100%;
+    }
+    .infoTable {
+        text-align: center;
+        font-size: 24px;
+        color: white;
+        margin-top: 20px;
+
+    }
+
+    .table {
+        font-size: 16px;
+        color: white;
+    }
+
+    .modal {
+        background-image: url("../images/vines-d.jpg");
+        color: #fff;
+        border-radius: 15px;
+        overflow-y:visible;
+
+    }
+
+    /* We want display none so when you click find my trails the content appears on the page*/
+
+    /* .allContent {
+        display: none;
+    } */

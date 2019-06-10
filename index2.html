@@ -1,81 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>google map</title>
-    <style>
- 
-    #map {
-        height: 400px;
-        width: 100%;
-    }
-    </style>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css"  media="screen,projection"/>
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Fredericka+the+Great&display=swap" rel="stylesheet">
+    <!-- Link Project CSS -->
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css"/>
+    <title>Renegade TrailBrews</title>
 </head>
 
 <body>
-    <p>1. FIRST ALLOW YOUR LOCATION</p>
-    <p>2. CLICK AGAIN TO DISPLAY THE MAP AND TRAILS AROUND YOU</p>
-    
-    <button onclick="getLocation()">CLICK</button>
-    
-    <p id="demo"></p>
-    
-    <h1>My Google Map</h1>
-<div id="map"></div>
+        <nav>
+            <div class="nav-wrapper green darken-2">
+              <a href="#" class="brand-logo center">Renegade Trailbrews</a>
+              <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="#">About</a></li>
+                <li><a href="#">MeetUp</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+        </nav>
 
-<script>
-    var x = document.getElementById("demo");
-    var Latitud;
-    var Longitud;
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+          <div class="modal-content">
+            <div id="allenQuote">45 Minutes From Start To Guiness -Allen Cooper</div>
+            <!--Form for Modal-->
+            <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s6">
+                              <input placeholder="Jane Doe" id="name" type="text" class="validate">
+                              <label for="name">Name</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input placeholder="JDoe@gmail.com" id="email" type="text" class="validate">
+                                <label for="email">E-Mail</label>
+                            </div>
+                        </div>
+                        <label for="email">Gender</label>
+                        <p>
+                          <label>
+                            <input type="checkbox" />
+                              <span>Male</span>
+                            </label>
+                        </p>
+                        <p>
+                          <label>
+                            <input type="checkbox" />
+                            <span>Female</span>
+                          </label>
+                        </p>
 
-    function getLocation() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
-        } else {
-            x.innerHTML = "Geolocation is not supported by this browser.";
-        }
-    }
+                    </form>
+                </div>
+            
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat" id="loc-button">Find My Trails</a>
+          </div>
+        </div> 
 
-    function showPosition(position) {
-        x.innerHTML = "Latitude: " + position.coords.latitude +
-            "<br>Longitude: " + position.coords.longitude;
-        Latitud = position.coords.latitude;
-        Longitud = position.coords.longitude;
+    <div class="mapTitle"><h1>Trails Near Me</h1></div>
 
-                var options = {
-            zoom: 8,
-            //     center: { lat: 40.730610, lng: -73.935242}
-            center: { lat: Latitud, lng: Longitud }
-        }
-        // new map
-        var map = new google.maps.Map(document.getElementById('map'), options);
-        var marker = new google.maps.Marker({
-            position: { lat: Latitud, lng: Longitud },
-            map: map,
-            icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+    <div id="map" height="400px" width="100%"></div>
 
-        });
-        var infoWindow = new google.maps.InfoWindow({
-            content: '<h1>HERE WE DISPLAY THE INFORMATION FROM THE TRAIL APIS</h1>'
-        });
+    <div id="getTrailInfo">
+        <p class="infoTable">Here are the top 10 trails near you: </p>
 
-        marker.addListener('click', function () {
-            infoWindow.open(map, marker);
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col" id="nameDisplay">Trail Name</th>
+                    <th scope="col" id="LocationDisplay">Location</th>
+                    <th scope="col" id="RatingDisplay">Rating</th>
+                    <th scope="col" id="DifficultyDisplay">Difficulty</th>
+                    <th scope="col" id="ConditionDisplay">Condition Details</th>
+                </tr>
+            </thead> 
+                <tbody></tbody>     
+        </table>
+    </div>
 
-        });
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKZ95YJGcmSmTi1q8vk3RDOQdoHFPD-78"></script>
+<script type="text/javascript" src="assets/javascript/app.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-    }
 
-    function initMap(){
-
-        //map options
-    }
-    
-    </script>
-
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKZ95YJGcmSmTi1q8vk3RDOQdoHFPD-78&callback=initMap">
-    </script>
 </body>
 </html>
+
+
+    <!-- <script>
+        var x = document.getElementById("demo");
+        var userLocation;
+        var map;
+        var trails = [];
+        var myLocation;
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(createMap);
+
+            } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+
+        function createMap(position) {
+            // assign global var with value
+            userLocation = position.coords
+
+            var options = {
+                zoom: 10,
+                center: { lat: userLocation.latitude, lng: userLocation.longitude }
+            }
+            map = new google.maps.Map(document.getElementById('map'), options);
+            var infoWindow = new google.maps.InfoWindow({
+                content: '<P>What an amazing location! Are you ready for some fun?</P>'
+            });
+
+            addMarker(userLocation)
+            callTrailApi();
+        }
+
+        function addMarker(coords) {
+            var marker = new google.maps.Marker({
+                position: {lat: coords.latitude, lng: coords.longitude},
+                map: map,
+                // icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+               
+            });
+        }
+
+        function handleTrails(response) {
+            var results=response.trails;
+
+            console.log(results)
+
+            for (i = 0; i < results.length; i++) {
+            //---------------------------------------------------------
+// // Name of the trail
+
+                    var NameDiv = $("#nameDisplay");
+                    var TrailName = results[i].name;
+                    var p = $("<p>").text(TrailName);
+                    NameDiv.append(p);
+// //---------------------------------------------------------
+// // Adding location 
+
+                    var LocationDiv = $("#LocationDisplay");
+                    var TrailLocation = results[i].location;
+                    var p = $("<p>").text(TrailLocation);
+                    LocationDiv.append(p);
+// //---------------------------------------------------------
+// // Adding Rating
+                    var TrailDiv = $("#RatingDisplay");
+                    var rating = results[i].stars;
+                    var p = $("<p>").text(rating);
+                    TrailDiv.append(p);
+// //---------------------------------------------------------
+// // Adding Difficulty Display
+                    var DifficultyDiv = $("#DifficultyDisplay");
+                    var TrailDifficulty= results[i].difficulty;
+                    var p = $("<p>").text("rating" + TrailDifficulty);
+                    DifficultyDiv.append(p);
+// //---------------------------------------------------------
+// // Adding Difficulty Display
+                    var ConditionDiv = $("#ConditionDisplay");
+                    var details = results[i].conditionDetails;
+                    var p = $("<p>").text("rating" + details);
+                    ConditionDiv.append(p);
+
+                    addMarker({latitude: results[i].latitude, longitude:results[i].longitude});
+
+        }
+        }
+
+
+        function callTrailApi() {
+            $.ajax({
+                url: "https://www.hikingproject.com/data/get-trails?lat=" + userLocation.latitude + "&lon=" + userLocation.longitude + "&maxDistance=50&key=200484748-f8ca8efbf0bcd4f50d87851ee05fd10a",
+                method: "GET"
+            }).then(handleTrails)
+        }
+
+
+        // function showPosition(position) {
+
+        //     x.innerHTML = "Latitude: " + position.coords.latitude +
+        //         "<br>Longitude: " + position.coords.longitude;
+        //     var Latitud = position.coords.latitude;
+        //     var Longitud = position.coords.longitude;
+
+        //     callApi(Latitud, Longitud)
+        //     var options = {
+        //         zoom: 10,
+        //         //     center: { lat: 40.730610, lng: -73.935242}
+        //         center: { lat: Latitud, lng: Longitud }
+        //     }
+        //     // new map
+        //     var map = new google.maps.Map(document.getElementById('map'), options);
+        //     var marker = new google.maps.Marker({
+        //         position: { lat: Latitud, lng: Longitud },
+        //         map: map,
+        //         // icon: "https://ih1.redbubble.net/image.594580624.1286/ap,550x550,12x16,1,transparent,t.u2.png height='10px' width='10px'"
+
+        //     });
+        //     var infoWindow = new google.maps.InfoWindow({
+        //         content: '<P>What an amazing location! Are you ready for some fun?</P>'
+        //     });
+
+        //     marker.addListener('click', function () {
+        //         infoWindow.open(map, marker);
+
+        //     });
+
+
+        //     // Pending option to add a marker  {content:'<h1>Brooklyn</h1>'});
+        //     addMarker({lat: 40.650002, lng: -73.949997});
+            
+        // }
+
+//         function callApi(x, y) {
+//             // AJAX request here for trails api
+//             console.log(x, y)
+
+//             // call jquary
+
+            // $.ajax({
+            //     url: "https://www.hikingproject.com/data/get-trails?lat=" + x + "&lon=" + y + "&maxDistance=50&key=200484748-f8ca8efbf0bcd4f50d87851ee05fd10a",
+            //     method: "GET"
+            // }).then(function (response) {
+            //     console.log(response)
+            //     var results=response.trails;
+            //     for(i=0; i< results.length; i++){
+
+            //         results[i].latitude
+
+            //         addMarker({
+            //             lat: results[i].latitude,
+
+            //             lng: results[i].longitude
+            //         })
+
+                    //  $.ajax({
+                    //     url: "https://www.hikingproject.com/data/get-trails?lat=" + x + "&lon=" + y + "&maxDistance=50&key=200484748-f8ca8efbf0bcd4f50d87851ee05fd10a",
+                    //     method: "GET"
+                    // }).then(handleTrails)
+// //---------------------------------------------------------
+// // Name of the trail
+
+//                     var NameDiv = $("#nameDisplay");
+//                     var TrailName = results[i].name;
+//                     var p = $("<p>").text(TrailName);
+//                     NameDiv.append(p);
+// //---------------------------------------------------------
+// // Adding location 
+
+//                     var LocationDiv = $("#LocationDisplay");
+//                     var TrailLocation = results[i].location;
+//                     var p = $("<p>").text(TrailLocation);
+//                     LocationDiv.append(p);
+// //---------------------------------------------------------
+// // Adding Rating
+//                     var TrailDiv = $("#RatingDisplay");
+//                     var rating = results[i].stars;
+//                     var p = $("<p>").text(rating);
+//                     TrailDiv.append(p);
+// //---------------------------------------------------------
+// // Adding Difficulty Display
+//                     var DifficultyDiv = $("#DifficultyDisplay");
+//                     var TrailDifficulty= results[i].difficulty;
+//                     var p = $("<p>").text("rating" + TrailDifficulty);
+//                     DifficultyDiv.append(p);
+// //---------------------------------------------------------
+// // Adding Difficulty Display
+//                     var ConditionDiv = $("#ConditionDisplay");
+//                     var details = results[i].conditionDetails;
+//                     var p = $("<p>").text("rating" + details);
+//                     ConditionDiv.append(p);
+// //----------------------------------------------------------------
+//                 }
+//             });
+//         }
+//         function initMap() {
+//         }
+    </script> -->
