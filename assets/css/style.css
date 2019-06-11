@@ -94,6 +94,10 @@ body {
 
     }
 
+    p {
+        display: inline-block !important;
+    }
+
     /* We want display none so when you click find my trails the content appears on the page*/
 
     /* .allContent {
