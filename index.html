@@ -11,27 +11,29 @@
     crossorigin="anonymous"></script>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css"  media="screen,projection"/>
-    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Fredericka+the+Great&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Fredericka+the+Great&display=fallback" rel="stylesheet">
     <!-- Link Project CSS -->
     <link type="text/css" rel="stylesheet" href="assets/css/style.css"/>
     <title>Renegade TrailBrews</title>
 </head>
 
 <body>
-        <nav>
-            <div class="nav-wrapper green darken-2">
-              <a href="#" class="brand-logo center">Renegade Trailbrews</a>
-              <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <li><a href="#">About</a></li>
-                <li><a href="#">MeetUp</a></li>
-                <li><a href="#">Contact</a></li>
-              </ul>
-            </div>
-        </nav>
+    <nav>
+        <div class="nav-wrapper green darken-2">
+            <!-- <div class="logo"> -->
+            <a href="#" class="brand-logo center">Renegade Trailbrews</a>
+            <img class="gif center" src="./assets/images/animat-compass copy.gif" alt="compass gif">
+            <!-- </div> -->
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">MeetUp</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+        </div>
+    </nav>
 
         <!-- Modal Structure -->
         <div id="modal1" class="modal">
@@ -67,15 +69,15 @@
                         </p>
                     </form>
                 </div>  
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat" id="loc-button">Find My Trails</a>
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat btn-large" id="loc-button">Find My Trails</a>
           </div>
         </div> 
 
     <div class="mapTitle"><h1>Trails Near Me</h1></div>
+        <div class="row">
+    <div id="map"></div>
 
-    <div id="map" height="400px" width="100%"></div>
-
-    <div id="getTrailInfo">
+    <div id="getTrailInfo col s6">
         <p class="infoTable">Here are the top 10 trails near you: </p>
 
         <table class="table">
@@ -91,6 +93,15 @@
                 <!-- <tbody></tbody>      -->
         </table>
     </div>
+    </div>
+    <footer class="page-footer green darken-2">
+    <div class="footer-copyright">
+            <div class="container">
+            © 2019 Copyright Renegades of Silicon Alley
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+        </footer>
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKZ95YJGcmSmTi1q8vk3RDOQdoHFPD-78"></script>
 <script type="text/javascript" src="assets/javascript/app.js"></script>
