@@ -11,8 +11,6 @@ $('#loc-button').click(getLocation,
     // $("#map").css("display", "block")
 );
 
-
-
 function showPosition(position) {
     x.innerHTML = "Latitude: " + position.coords.latitude +
         "<br>Longitude: " + position.coords.longitude;
