@@ -2,23 +2,40 @@
 
 body {
     font-family: 'Cabin Sketch', cursive;
-    color: white;
-    background-color: rgb(138, 78, 0);
+    color: grey;
+    background-color: rgb(252, 251, 250);
 }
-
+.logo {
+    position: relative;
+}
 .nav-wrapper {
     font-family: 'Cabin Sketch', cursive;
     background-image: url("../images/vines-d.jpg");
-    /* height: 200px !important; */
+    height: 160px !important;
 }
 
+.page-footer {
+    font-family: 'Cabin Sketch', cursive;
+    background-image: url("../images/vines-d.jpg");
+    height: 80px !important;
+}
+
+.gif {
+    position: absolute;
+    height: 200px;
+}
 
 .brand-logo {
+    z-index: 2;
     text-shadow: 2px 2px 7px wheat;
     font-style: italic;
+    font-size: 80px !important;
     font-family: 'Fredericka the Great', cursive;
     filter: brightness(100%);
-}
+    vertical-align: middle;
+    padding: 10px !important;
+  }
+
 .container {
     width: 100%;
     max-width: 960px;
@@ -26,14 +43,12 @@ body {
     clear: both;
   }
 
-
 .mapTitle {
     margin-left: 10px;
 }
 
 #loc-button {
         width: 200px;
-        height: 45px;
         font-family: 'Fredericka the Great', cursive;
         font-size: 11px;
         text-transform: uppercase;
@@ -74,14 +89,14 @@ body {
     .infoTable {
         text-align: center;
         font-size: 24px;
-        color: white;
+        color: grey;
         margin-top: 20px;
 
     }
 
     .table {
         font-size: 16px;
-        color: white;
+        color: grey;
     }
 
     .modal {
