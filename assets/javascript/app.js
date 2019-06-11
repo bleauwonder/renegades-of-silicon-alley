@@ -27,7 +27,7 @@ function showPosition(position) {
     var marker = new google.maps.Marker({
         position: { lat: Latitud, lng: Longitud },
         map: map,
-        icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+        // icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
 
     });
     var infoWindow = new google.maps.InfoWindow({
@@ -71,14 +71,32 @@ function createMap(position) {
 
     addMarker(userLocation)
     callTrailApi();
+   //------//
+    callBreweryAPI();
+
 }
 
 function addMarker(coords) {
-    var marker = new google.maps.Marker({
+
+
+    var contentString = '<div id="content">'
+        '<p>hello</p>' +
+        '</div>' +
+        '</div>';
+    var infowindow = new google.maps.InfoWindow({
+        content: contentString
+    });
+
+  var marker = new google.maps.Marker({
         position: {lat: coords.latitude, lng: coords.longitude},
         map: map,
-        icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+        title: 'Uluru (Ayers Rock)',
+        // icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
        
+    });
+
+    marker.addListener('click', function () {
+        infowindow.open(map, marker);
     });
 }
 
@@ -126,11 +144,58 @@ function handleTrails(response) {
     }
 }
 
-function callTrailApi() {
-    $.ajax({
-        url: "https://www.hikingproject.com/data/get-trails?lat=" + userLocation.latitude + "&lon=" + userLocation.longitude + "&maxDistance=50&key=200484748-f8ca8efbf0bcd4f50d87851ee05fd10a",
-        method: "GET"
-    }).then(handleTrails)
-}
+    function callTrailApi() {
+        $.ajax({
+            url: "https://www.hikingproject.com/data/get-trails?lat=" + userLocation.latitude + "&lon=" + userLocation.longitude + "&maxDistance=50&key=200484748-f8ca8efbf0bcd4f50d87851ee05fd10a",
+            method: "GET"
+        }).then(handleTrails)
+    }
+
+//-----------------------------------------------------------------------------------------
+
+    function callBreweryAPI(){
+        $.ajax({
+            url: "https://api.openbrewerydb.org/breweries?by_state=new_york", 
+            method: "GET" 
+        }).then(handleBreweries)
+        
+
+    }
+
+
+
+    function handleBreweries(response) {
+        console.log(response)
+        for(x=0 ; response.length ; x++){
+        
+        var breweryName = $("<div>");
+        var name = response[x].name;
+        var text = $("<p>").text(name);
+        breweryName.append(text);
+        $('#breweryName').append(breweryName);
+
+        var breweryStreet = $("<div>");
+        var street = response[x].street;
+        var text = $("<p>").text(street);
+        breweryStreet.append(text);
+        $('#breweryAddress').append(breweryStreet);
+
+        var breweryPhone = $("<div>");
+        var phone = response[x].phone;
+        var text = $("<p>").text(phone);
+        breweryPhone.append(text);
+        $('#breweryPhone').append(breweryPhone);
+
+
+        console.log(response);
+        console.log(name);
+        var coords = {
+            latitude: response[0].latitude,
+            longitude: response[0].longitude
+        }
+        }
+        addMarker(coords);   
+    }
+
 
 })
