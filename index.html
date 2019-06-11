@@ -9,6 +9,9 @@
     src="https://code.jquery.com/jquery-3.4.1.js"
     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
+    <!--Firebase CDN-->
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-database.js"></script>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -54,19 +57,40 @@
                                 <label for="email">E-Mail</label>
                             </div>
                         </div>
-                        <label for="email">Gender</label>
-                        <p>
+                        
+                        <label for="email" >Age</label>
+                        <div class="row ageCheckBox">
+                          <p>
                           <label>
-                            <input type="checkbox" />
-                              <span>Male</span>
+                            <input name="names" type="radio" />
+                              <span>21-26</span>
                             </label>
                         </p>
                         <p>
                           <label>
-                            <input type="checkbox" />
-                            <span>Female</span>
+                            <input name="names" type="radio" />
+                            <span>27-31</span>
                           </label>
                         </p>
+                        <p>
+                          <label>
+                            <input name="names" type="radio" />
+                            <span>32-37</span>
+                          </label>
+                        </p>
+                        <p>
+                          <label>
+                            <input name="names" type="radio" />
+                            <span>41-46</span>
+                          </label>
+                        </p>
+                        <p>
+                          <label>
+                            <input name="names" type="radio" />
+                            <span>46+</span>
+                          </label>
+                        </p>
+                      </div>
                     </form>
                 </div>  
             <a href="#!" class="modal-close waves-effect waves-green btn-flat btn-large" id="loc-button">Find My Trails</a>
