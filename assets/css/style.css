@@ -5,9 +5,12 @@ body {
     color: grey;
     background-color: rgb(252, 251, 250);
 }
+
 .logo {
-    position: relative;
+    position: absolute;
+    width: 100%;
 }
+
 .nav-wrapper {
     font-family: 'Cabin Sketch', cursive;
     background-image: url("../images/vines-d.jpg");
@@ -23,10 +26,15 @@ body {
 .gif {
     position: absolute;
     height: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
 }
 
 .brand-logo {
-    z-index: 2;
+    position: relative !important;
+    z-index: 0;
     text-shadow: 2px 2px 7px wheat;
     font-style: italic;
     font-size: 80px !important;
@@ -34,6 +42,7 @@ body {
     filter: brightness(100%);
     vertical-align: middle;
     padding: 10px !important;
+    max-width: 600px;
   }
 
 .container {
