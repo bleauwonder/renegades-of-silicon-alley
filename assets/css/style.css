@@ -13,13 +13,13 @@ body {
 
 .nav-wrapper {
     font-family: 'Cabin Sketch', cursive;
-    background-image: url("../images/vines-d.jpg");
+    background-image: url("../images/cascade-clouds-cool-wallpaper-210186-2.jpg");
     height: 160px !important;
 }
 
 .page-footer {
     font-family: 'Cabin Sketch', cursive;
-    background-image: url("../images/vines-d.jpg");
+    background-image: url("../images/cascade-clouds-cool-wallpaper-210186-2.jpg");
     height: 80px !important;
 }
 
@@ -77,49 +77,60 @@ body {
     }
     
     #loc-button:hover {
-        background-color: #388E3C;
+        background-color: rgb(73, 122, 76);
         box-shadow: 0px 15px 20px rgba(9, 145, 90, 0.4);
         color: #fff;
         transform: translateY(-7px);
       }
+
+#map {
+    height: 400px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: 600px;
+}
+
+.infoTable {
+    text-align: center;
+    font-size: 24px;
+    color: grey;
+    margin-top: 20px;
+    border-bottom: grey;
+}
+
+.infoTable thead {
+    display:table-header-group;
+}
+
+.table {
+    font-size: 16px;
+    color: grey;
+}
 
     #allenQuote {
         font-size: 24px;
         font-style: italic;
         margin-bottom: 10px;
     }
-
-    #map {
-        height: 400px;
-        width: 60%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .infoTable {
-        text-align: center;
-        font-size: 24px;
-        color: grey;
-        margin-top: 20px;
-
-    }
-
-    .table {
-        font-size: 16px;
-        color: grey;
-    }
-
     .modal {
-        background-image: url("../images/vines-d.jpg");
+        background-image: url("../images/clouds-dawn-nature-561463.jpg");
         color: #fff;
         border-radius: 15px;
         overflow-y:visible;
-
     }
 
-    p {
-        display: inline-block !important;
-    }
+p {
+    display: inline-block !important;
+}
 
+.testbrewery {
+    font-size: 24px;
+    border-bottom: grey;
+}
+
+.carousel .carousel-item {
+    width: 300px !important;
+}
     /* We want display none so when you click find my trails the content appears on the page*/
 
     /* .allContent {
