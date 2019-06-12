@@ -6,9 +6,24 @@ console.log("hello")
 $('.modal').modal();
 $('.modal').modal("open");
 
+//Firebase Script Below
+
+firebase.initializeApp(config)
+
+const userName = $("#name").val().trim()
+const userEmail = $("email").val().trim()
+const userAge = $("age").val().trim()
+const firebaseRef = firebase.database()
+
 $('#loc-button').click(getLocation,
     // $(".allContent").css("display", "block"),
     // $("#map").css("display", "block")
+    firebaseRef.ref().push({
+        name: name,
+        email: email,
+        age: age,
+        dateAdded: firebase.database.ServerValue.TIMESTAMP
+    })
 );
 
 function showPosition(position) {
@@ -132,5 +147,4 @@ function callTrailApi() {
         method: "GET"
     }).then(handleTrails)
 }
-
 })
