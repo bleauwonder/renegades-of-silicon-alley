@@ -38,7 +38,6 @@ function showPosition(position) {
         infoWindow.open(map, marker);
 
     });
-
 }
 
 var x = document.getElementById("demo");
@@ -50,8 +49,8 @@ var myLocation;
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(createMap);
-
-    } else {
+    }
+    else {
         x.innerHTML = "Geolocation is not supported by this browser.";
     }
 }
@@ -73,11 +72,9 @@ function createMap(position) {
     callTrailApi();
    //------//
     callBreweryAPI();
-
 }
 
 function addMarker(coords) {
-
 
     var contentString = '<div id="content">'
         '<p>hello</p>' +
@@ -92,7 +89,6 @@ function addMarker(coords) {
         map: map,
         title: 'Uluru (Ayers Rock)',
         // icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
-       
     });
 
     marker.addListener('click', function () {
@@ -109,38 +105,53 @@ function handleTrails(response) {
     //---------------------------------------------------------
 // // Name of the trail
 
-            var NameDiv = $("#nameDisplay");
+            // var NameDiv = $("<div>");
             var TrailName = results[i].name;
-            var p = $("<p>").text(TrailName);
-            NameDiv.append(p);
+            // var p = $("<td>").text(TrailName);
+            // NameDiv.append(p);
+            // $("#nameDisplay").append(NameDiv);
 // //---------------------------------------------------------
 // // Adding location 
 
-            var LocationDiv = $("#LocationDisplay");
+            // var LocationDiv = $("<div>");
             var TrailLocation = results[i].location;
-            var p = $("<p>").text(TrailLocation);
-            LocationDiv.append(p);
+            // var p = $("<td>").text(TrailLocation);
+            // LocationDiv.append(p);
+            // $("#LocationDisplay").append(LocationDiv);
 // //---------------------------------------------------------
 // // Adding Rating
-            var TrailDiv = $("#RatingDisplay");
+            // var TrailDiv = $("<div>");
             var rating = results[i].stars;
-            var p = $("<p>").text(rating);
-            TrailDiv.append(p);
+            // var p = $("<td>").text(rating);
+            // TrailDiv.append(p);
+            // $("#RatingDisplay").append(TrailDiv);
 // //---------------------------------------------------------
 // // Adding Difficulty Display
-            var DifficultyDiv = $("#DifficultyDisplay");
+            // var DifficultyDiv = $("<div>");
             var TrailDifficulty= results[i].difficulty;
-            var p = $("<p>").text("rating" + TrailDifficulty);
-            DifficultyDiv.append(p);
+            // var p = $("<td>").text(TrailDifficulty);
+            // DifficultyDiv.append(p);
+            // $("#DifficultyDisplay").append(DifficultyDiv);
 // //---------------------------------------------------------
 // // Adding Difficulty Display
-            var ConditionDiv = $("#ConditionDisplay");
+            // var ConditionDiv = $("<div>");
             var details = results[i].conditionDetails;
-            var p = $("<p>").text("rating" + details);
-            ConditionDiv.append(p);
+            // var p = $("<td>").text(details);
+            // ConditionDiv.append(p);
+            // $("#ConditionDisplay").append(ConditionDiv);
+
+            var newRow = $("<tr>").append(
+                $("<td>").text(TrailName),
+                $("<td>").text(TrailLocation),
+                $("<td>").text(rating),
+                $("<td>").text(TrailDifficulty),
+                $("<td>").text(details),
+              );
+            
+              // Append the new row to the table
+              $("#trail-table > tbody").append(newRow);
 
             addMarker({latitude: results[i].latitude, longitude:results[i].longitude});
-
     }
 }
 
@@ -158,34 +169,38 @@ function handleTrails(response) {
             url: "https://api.openbrewerydb.org/breweries?by_state=new_york", 
             method: "GET" 
         }).then(handleBreweries)
-        
-
     }
-
-
 
     function handleBreweries(response) {
         console.log(response)
         for(x=0 ; response.length ; x++){
         
-        var breweryName = $("<div>");
+        // var breweryName = $("<div>");
         var name = response[x].name;
-        var text = $("<p>").text(name);
-        breweryName.append(text);
-        $('#breweryName').append(breweryName);
+        // var text = $("<td>").text(name);
+        // breweryName.append(text);
+        // $('#breweryName').append(breweryName);
 
-        var breweryStreet = $("<div>");
+        // var breweryStreet = $("<div>");
         var street = response[x].street;
-        var text = $("<p>").text(street);
-        breweryStreet.append(text);
-        $('#breweryAddress').append(breweryStreet);
+        // var text = $("<td>").text(street);
+        // breweryStreet.append(text);
+        // $('#breweryAddress').append(breweryStreet);
 
-        var breweryPhone = $("<div>");
+        // var breweryPhone = $("<div>");
         var phone = response[x].phone;
-        var text = $("<p>").text(phone);
-        breweryPhone.append(text);
-        $('#breweryPhone').append(breweryPhone);
+        // var text = $("<td>").text(phone);
+        // breweryPhone.append(text);
+        // $('#breweryPhone').append(breweryPhone);
 
+        var nRow = $("<tr>").append(
+            $("<td>").text(name),
+            $("<td>").text(street),
+            $("<td>").text(phone),
+          );
+        
+          // Append the new row to the table
+          $("#brewery-table > tbody").append(nRow);
 
         console.log(response);
         console.log(name);
@@ -197,5 +212,8 @@ function handleTrails(response) {
         addMarker(coords);   
     }
 
-
-})
+    $(document).ready(function(){
+        $('.carousel').carousel();
+      });
+          
+});
