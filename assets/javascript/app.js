@@ -7,17 +7,12 @@ $('.modal').modal();
 $('.modal').modal("open");
 
 //Firebase Script Below
-
-firebase.initializeApp(config)
-
-const userName = $("#name").val().trim()
-const userEmail = $("email").val().trim()
-const userAge = $("age").val().trim()
-const firebaseRef = firebase.database()
+var userName = $("#name").val().trim()
+var userEmail = $("email").val().trim()
+var userAge = $("age").val().trim()
+var firebaseRef = firebase.database()
 
 $('#loc-button').click(getLocation,
-    // $(".allContent").css("display", "block"),
-    // $("#map").css("display", "block")
     firebaseRef.ref().push({
         name: name,
         email: email,
