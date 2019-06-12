@@ -7,8 +7,21 @@ $('.modal').modal();
 $('.modal').modal("open");
 
 $('#loc-button').click(getLocation,
-    // $(".allContent").css("display", "block"),
-    // $("#map").css("display", "block")
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyD89eHz6vpEhwS-7Yl5LWxAhkNEb_3jzj4",
+    authDomain: "renegade-trailbrews.firebaseapp.com",
+    databaseURL: "https://renegade-trailbrews.firebaseio.com",
+    projectId: "renegade-trailbrews",
+    storageBucket: "renegade-trailbrews.appspot.com",
+    messagingSenderId: "714621014313",
+    appId: "1:714621014313:web:8e285f45bbe8e0d8"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  
+
 );
 
 function showPosition(position) {
