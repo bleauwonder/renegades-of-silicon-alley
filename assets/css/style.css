@@ -3,7 +3,7 @@
 body {
     font-family: 'Cabin Sketch', cursive;
     color: grey;
-    background-color: rgb(252, 251, 250);
+    background-image: url(../images/gray_jean/gray_jean.png);
 }
 
 .logo {
@@ -85,7 +85,7 @@ body {
 
 #map {
     height: 400px;
-    width: 60%;
+    width: 100%;
     margin-left: auto;
     margin-right: 600px;
 }
@@ -99,7 +99,7 @@ body {
 }
 
 .infoTable thead {
-    display:table-header-group;
+    display: table-header-group;
 }
 
 .table {
@@ -112,15 +112,16 @@ body {
         font-style: italic;
         margin-bottom: 10px;
     }
+
     .modal {
         background-image: url("../images/topography/topography.png");
-        color: #fff;
+        color: grey;
         border-radius: 15px;
         overflow-y:visible;
     }
 
 p {
-    display: inline-block !important;
+    display: inline-block;
 }
 
 .testbrewery {
@@ -128,8 +129,18 @@ p {
     border-bottom: grey;
 }
 
+.card {
+    height: 550px !important;
+    padding: 10px;
+}
+
+.carousel {
+    overflow: visible; 
+    height: 500px;
+} 
+
 .carousel .carousel-item {
-    width: 300px !important;
+    width: 600px;
 }
     /* We want display none so when you click find my trails the content appears on the page*/
 
