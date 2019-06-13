@@ -4,40 +4,37 @@ $(document).ready(function() {
 $('.modal').modal();
 $('.modal').modal("open");
 
-// Your web app's Firebase configuration
+
 var firebaseConfig = {
-apiKey: "AIzaSyD89eHz6vpEhwS-7Yl5LWxAhkNEb_3jzj4",
-authDomain: "renegade-trailbrews.firebaseapp.com",
-databaseURL: "https://renegade-trailbrews.firebaseio.com",
-projectId: "renegade-trailbrews",
-storageBucket: "renegade-trailbrews.appspot.com",
-messagingSenderId: "714621014313",
-appId: "1:714621014313:web:8e285f45bbe8e0d8"
-};
+    apiKey: "AIzaSyD89eHz6vpEhwS-7Yl5LWxAhkNEb_3jzj4",
+    authDomain: "renegade-trailbrews.firebaseapp.com",
+    databaseURL: "https://renegade-trailbrews.firebaseio.com",
+    projectId: "renegade-trailbrews",
+    storageBucket: "renegade-trailbrews.appspot.com",
+    messagingSenderId: "714621014313",
+    appId: "1:714621014313:web:8e285f45bbe8e0d8"
+    };
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-//Firebase Script Below
-
-$('#loc-button').click(function(event) {
-
-var userName = $("#userName").val().trim()
-var userEmail = $("#userEmail").val().trim()
-var userAge = $("input[name='age']:checked").val().trim()
-var firebaseRef = firebase.database()
-
-    console.log(userName)
-    console.log(userEmail)
-    console.log(userAge)
-    event.preventDefault();
-    getLocation()
-    firebaseRef.ref().push({
-        name: userName,
-        email: userEmail,
-        age: userAge,
-        dateAdded: firebase.database.ServerValue.TIMESTAMP
-    })
-}  
+$('#loc-button').click(function (event) {
+    var userName = $("#userName").val().trim()
+    var userEmail = $("#userEmail").val().trim()
+    var userAge = $("input[name='age']:checked").val().trim()
+    var firebaseRef = firebase.database()
+    
+        console.log(userName)
+        console.log(userEmail)
+        console.log(userAge)
+        getLocation()
+        event.preventDefault();
+        firebaseRef.ref().push({
+            name: userName,
+            email: userEmail,
+            age: userAge,
+            dateAdded: firebase.database.ServerValue.TIMESTAMP})
+    }
 );
 
 function showPosition(position) {
