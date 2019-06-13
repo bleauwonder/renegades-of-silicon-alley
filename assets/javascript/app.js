@@ -101,7 +101,7 @@ function handleTrails(response) {
 
     console.log(results)
 
-    for (i = 0; i < results.length; i++) {
+    for (i = 0; i < 5; i++) {
     //---------------------------------------------------------
 // // Name of the trail
 
@@ -128,14 +128,14 @@ function handleTrails(response) {
 // //---------------------------------------------------------
 // // Adding Difficulty Display
             // var DifficultyDiv = $("<div>");
-            var TrailDifficulty= results[i].difficulty;
+            // var TrailDifficulty= results[i].difficulty;
             // var p = $("<td>").text(TrailDifficulty);
             // DifficultyDiv.append(p);
             // $("#DifficultyDisplay").append(DifficultyDiv);
 // //---------------------------------------------------------
 // // Adding Difficulty Display
             // var ConditionDiv = $("<div>");
-            var details = results[i].conditionDetails;
+            // var details = results[i].conditionDetails;
             // var p = $("<td>").text(details);
             // ConditionDiv.append(p);
             // $("#ConditionDisplay").append(ConditionDiv);
@@ -144,8 +144,8 @@ function handleTrails(response) {
                 $("<td>").text(TrailName),
                 $("<td>").text(TrailLocation),
                 $("<td>").text(rating),
-                $("<td>").text(TrailDifficulty),
-                $("<td>").text(details),
+                // $("<td>").text(TrailDifficulty),
+                // $("<td>").text(details),
               );
             
               // Append the new row to the table
@@ -173,7 +173,7 @@ function handleTrails(response) {
 
     function handleBreweries(response) {
         console.log(response)
-        for(x=0 ; response.length ; x++){
+        for(x=0 ; x < 5 ; x++){
         
         // var breweryName = $("<div>");
         var name = response[x].name;
