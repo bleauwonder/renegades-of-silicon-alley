@@ -189,7 +189,7 @@ function handleTrails(response) {
         console.log(response)
         
         
-======= for(x=0 ; x<5 ; x++){
+         for(x=0 ; x<5 ; x++){
 
         
         // var breweryName = $("<div>");
