@@ -1,10 +1,9 @@
 $(document).ready(function() {
-
-var x = document.getElementById("demo");
-console.log("hello")
-
+    
+//Modal open on page load
 $('.modal').modal();
 $('.modal').modal("open");
+
 
 var firebaseConfig = {
     apiKey: "AIzaSyD89eHz6vpEhwS-7Yl5LWxAhkNEb_3jzj4",
@@ -36,8 +35,6 @@ $('#loc-button').click(function (event) {
             age: userAge,
             dateAdded: firebase.database.ServerValue.TIMESTAMP})
     }
-
-    
 );
 
 function showPosition(position) {
