@@ -105,7 +105,7 @@ function createMap(position) {
     addMarker(userLocation, icons.user);
     // addMarker(coords, icons.name)
     callTrailApi();
-   //------//
+
     callBreweryAPI();
 }
 
@@ -142,52 +142,18 @@ function handleTrails(response) {
     console.log(results)
 
     for (i = 0; i < 5; i++) {
-    //---------------------------------------------------------
-// // Name of the trail
-
-            // var NameDiv = $("<div>");
+    //Name of the trail
             var TrailName = results[i].name;
-            // var p = $("<td>").text(TrailName);
-            // NameDiv.append(p);
-            // $("#nameDisplay").append(NameDiv);
-// //---------------------------------------------------------
-// // Adding location 
-
-            // var LocationDiv = $("<div>");
+    //Location 
             var TrailLocation = results[i].location;
-            // var p = $("<td>").text(TrailLocation);
-            // LocationDiv.append(p);
-            // $("#LocationDisplay").append(LocationDiv);
-// //---------------------------------------------------------
-// // Adding Rating
-            // var TrailDiv = $("<div>");
+    //Rating
             var rating = results[i].stars;
-            // var p = $("<td>").text(rating);
-            // TrailDiv.append(p);
-            // $("#RatingDisplay").append(TrailDiv);
-// //---------------------------------------------------------
-// // Adding Difficulty Display
-            // var DifficultyDiv = $("<div>");
-            // var TrailDifficulty= results[i].difficulty;
-            // var p = $("<td>").text(TrailDifficulty);
-            // DifficultyDiv.append(p);
-            // $("#DifficultyDisplay").append(DifficultyDiv);
-// //---------------------------------------------------------
-// // Adding Difficulty Display
-            // var ConditionDiv = $("<div>");
-            // var details = results[i].conditionDetails;
-            // var p = $("<td>").text(details);
-            // ConditionDiv.append(p);
-            // $("#ConditionDisplay").append(ConditionDiv);
 
             var newRow = $("<tr>").append(
                 $("<td>").text(TrailName),
                 $("<td>").text(TrailLocation),
                 $("<td>").text(rating),
-                // $("<td>").text(TrailDifficulty),
-                // $("<td>").text(details),
               );
-            
               // Append the new row to the table
               $("#trail-table > tbody").append(newRow);
 
@@ -202,8 +168,6 @@ function handleTrails(response) {
         }).then(handleTrails)
     }
 
-//-----------------------------------------------------------------------------------------
-
     function callBreweryAPI(){
         $.ajax({
             url: "https://api.openbrewerydb.org/breweries?by_state=new_york", 
@@ -214,27 +178,11 @@ function handleTrails(response) {
     function handleBreweries(response) {
         console.log(response)
         
-        
          for(x=0 ; x<5 ; x++){
 
-        
-        // var breweryName = $("<div>");
         var name = response[x].name;
-        // var text = $("<td>").text(name);
-        // breweryName.append(text);
-        // $('#breweryName').append(breweryName);
-
-        // var breweryStreet = $("<div>");
         var street = response[x].street;
-        // var text = $("<td>").text(street);
-        // breweryStreet.append(text);
-        // $('#breweryAddress').append(breweryStreet);
-
-        // var breweryPhone = $("<div>");
         var phone = response[x].phone;
-        // var text = $("<td>").text(phone);
-        // breweryPhone.append(text);
-        // $('#breweryPhone').append(breweryPhone);
 
         var nRow = $("<tr>").append(
             $("<td>").text(name),
