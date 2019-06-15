@@ -23,23 +23,24 @@
 <body>
     <nav>
         <div class="nav-wrapper teal darken-1">
-                <ul id="nav-mobile" class="left hide-on-med-and-down">
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">MeetUp</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="left hide-on-med-and-down">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="meetup.html">MeetUp</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
             <div class="logo">
-            <a href="#" class="brand-logo center">Renegade Trailbrews
-            <img class="gif center" src="./assets/images/animat-compass copy.gif" alt="compass gif">
-        </a>
+                <a href="index.html" class="brand-logo center">Renegade Trailbrews
+                    <img class="gif center" src="./assets/images/animat-compass.gif" alt="compass gif">
+                </a>
             </div>
         </div>
     </nav>
 
     <!-- Modal Structure -->
     <div id="modal1" class="modal">
-      <div class="modal-content">
-        <div id="allenQuote">"45 Minutes From Start To Guiness" -Allen Cooper</div>
+        <div class="modal-content">
+            <div id="allenQuote">"45 Minutes From Start To Guiness" -Allen Cooper</div>
         <!--Form for Modal-->
         <div class="row">
 
@@ -50,12 +51,12 @@
                             <label for="name">Name</label>
                     </div>
                 </div>
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <input placeholder="JDoe@gmail.com" id="userEmail" type="text" class="validate">
-                                <label for="email">E-Mail</label>
-                        </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="JDoe@gmail.com" id="userEmail" type="text" class="validate">
+                            <label for="email">E-Mail</label>
                     </div>
+                </div>
                         
                     <label for="age" >Age</label>
                         <div class="row">
@@ -93,63 +94,58 @@
                     </form>
                 </div>  
             <a href="#!" class="modal-close waves-effect waves-green btn-flat btn-large" id="loc-button">Find My Trails</a>
-          </div>
-        </div> 
-
+        </div>
+    </div> 
 
     <div class="mapTitle"><h1>Trails Near Me</h1></div>
         <div class="row">
             <div id="map"></div>
                 <br>
             <div class="col s6">
-            <div class='card large'>
-                <div class='card-title'>
-                <p class="infoTable">Top 5 Trails Near You: </p>
-            </div>
-            <div class='card-body'>
+                <div class='card large'>
+                    <div class='card-title'>
+                        <p class="infoTable">Top 5 Trails Near You: </p>
+                    </div>
+                <div class='card-body'>
                     <table class="table highlight" id="trail-table">
                         <thead>
                             <tr>
                                 <th scope="col">Trail Name</th>
                                 <th scope="col">Location</th>
                                 <th scope="col">Rating</th>
-                                <!-- <th scope="col">Difficulty</th>
-                                <th scope="col">Condition Details</th> -->
                             </tr>
                         </thead> 
-                        <tbody>
-                        </tbody>
+                            <tbody>
+                            </tbody>
+                    </table>
+                </div>
+                </div>
+            </div>
+       
+        <div class='col s6'>
+            <div class='card large'>
+                <div class='card-title'>
+                    <p class="testbrewery">Top 5 Breweries for the End of Your Hike: </p> 
+                </div>
+                <div class="card-body">
+                    <table class="table highlight" id="brewery-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Brewery Name</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Phone Number</th>   
+                            </tr>
+                        </thead>
+                            <tbody>
+                            </tbody>
                     </table>
                 </div>
             </div>
         </div>
-       
-        <div class='col s6'>
-        <div class='card large'>
-            <div class='card-title'>
-                <p class="testbrewery">Top 5 Breweries for the End of Your Hike: </p> 
-            </div>
-            <div class="card-body">
-            <table class="table highlight" id="brewery-table">
-                <thead>
-                    <tr>
-                        <th scope="col">Brewery Name</th>
-                        <th scope="col">Address</th>
-                        <th scope="col">Phone Number</th>   
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
         </div>
-    </div>
-</div>
-</div>
     
     <div class="carousel">
         <a class="carousel-item" href="#one!"><img src="https://d11i9byukk4agg.cloudfront.net/app/public/assets/stories/1749/main_photo/large/tumblr_nr4axqkfXR1ri43n6o1_1280.jpg?1514614117"></a>
-        <!-- <a class="carousel-item" href="#two!"><img src="https://66.media.tumblr.com/99fabe40c866e3b75a11b024de80bb10/tumblr_olset6zxlt1qassaoo1_1280.jpg"></a> -->
-        <!-- <a class="carousel-item" href="#three!"><img src="https://66.media.tumblr.com/140b49349dc535946c9f577f09aa7c1b/tumblr_oufptrVd1J1sfaftvo1_1280.jpg"></a> -->
         <a class="carousel-item" href="#four!"><img src="https://66.media.tumblr.com/880cf1f775bb3a011b04e9d5e7222099/tumblr_nnac7jhORa1t7xuqto1_1280.jpg"></a>
         <a class="carousel-item" href="#five!"><img src="https://banknxt.com/wp-content/uploads/2015/05/SW_Josh-Felise.jpg"></a>
     </div>
@@ -165,8 +161,6 @@
         </div>
     </footer>
 
-
-
     <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-database.js"></script>
     
@@ -174,204 +168,6 @@
     <script type="text/javascript" src="assets/javascript/app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-
 </body>
 </html>
 
-
-    <!-- <script>
-        var x = document.getElementById("demo");
-        var userLocation;
-        var map;
-        var trails = [];
-        var myLocation;
-
-        function getLocation() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(createMap);
-
-            } else {
-                x.innerHTML = "Geolocation is not supported by this browser.";
-            }
-        }
-
-        function createMap(position) {
-            // assign global var with value
-            userLocation = position.coords
-
-            var options = {
-                zoom: 10,
-                center: { lat: userLocation.latitude, lng: userLocation.longitude }
-            }
-            map = new google.maps.Map(document.getElementById('map'), options);
-            var infoWindow = new google.maps.InfoWindow({
-                content: '<P>What an amazing location! Are you ready for some fun?</P>'
-            });
-
-            addMarker(userLocation)
-            callTrailApi();
-        }
-
-        function addMarker(coords) {
-            var marker = new google.maps.Marker({
-                position: {lat: coords.latitude, lng: coords.longitude},
-                map: map,
-                // icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
-               
-            });
-        }
-
-        function handleTrails(response) {
-            var results=response.trails;
-
-            console.log(results)
-
-            for (i = 0; i < results.length; i++) {
-            //---------------------------------------------------------
-// // Name of the trail
-
-                    var NameDiv = $("#nameDisplay");
-                    var TrailName = results[i].name;
-                    var p = $("<p>").text(TrailName);
-                    NameDiv.append(p);
-// //---------------------------------------------------------
-// // Adding location 
-
-                    var LocationDiv = $("#LocationDisplay");
-                    var TrailLocation = results[i].location;
-                    var p = $("<p>").text(TrailLocation);
-                    LocationDiv.append(p);
-// //---------------------------------------------------------
-// // Adding Rating
-                    var TrailDiv = $("#RatingDisplay");
-                    var rating = results[i].stars;
-                    var p = $("<p>").text(rating);
-                    TrailDiv.append(p);
-// //---------------------------------------------------------
-// // Adding Difficulty Display
-                    var DifficultyDiv = $("#DifficultyDisplay");
-                    var TrailDifficulty= results[i].difficulty;
-                    var p = $("<p>").text("rating" + TrailDifficulty);
-                    DifficultyDiv.append(p);
-// //---------------------------------------------------------
-// // Adding Difficulty Display
-                    var ConditionDiv = $("#ConditionDisplay");
-                    var details = results[i].conditionDetails;
-                    var p = $("<p>").text("rating" + details);
-                    ConditionDiv.append(p);
-
-                    addMarker({latitude: results[i].latitude, longitude:results[i].longitude});
-
-        }
-        }
-
-
-        function callTrailApi() {
-            $.ajax({
-                url: "https://www.hikingproject.com/data/get-trails?lat=" + userLocation.latitude + "&lon=" + userLocation.longitude + "&maxDistance=50&key=200484748-f8ca8efbf0bcd4f50d87851ee05fd10a",
-                method: "GET"
-            }).then(handleTrails)
-        }
-
-
-        // function showPosition(position) {
-
-        //     x.innerHTML = "Latitude: " + position.coords.latitude +
-        //         "<br>Longitude: " + position.coords.longitude;
-        //     var Latitud = position.coords.latitude;
-        //     var Longitud = position.coords.longitude;
-
-        //     callApi(Latitud, Longitud)
-        //     var options = {
-        //         zoom: 10,
-        //         //     center: { lat: 40.730610, lng: -73.935242}
-        //         center: { lat: Latitud, lng: Longitud }
-        //     }
-        //     // new map
-        //     var map = new google.maps.Map(document.getElementById('map'), options);
-        //     var marker = new google.maps.Marker({
-        //         position: { lat: Latitud, lng: Longitud },
-        //         map: map,
-        //         // icon: "https://ih1.redbubble.net/image.594580624.1286/ap,550x550,12x16,1,transparent,t.u2.png height='10px' width='10px'"
-
-        //     });
-        //     var infoWindow = new google.maps.InfoWindow({
-        //         content: '<P>What an amazing location! Are you ready for some fun?</P>'
-        //     });
-
-        //     marker.addListener('click', function () {
-        //         infoWindow.open(map, marker);
-
-        //     });
-
-
-        //     // Pending option to add a marker  {content:'<h1>Brooklyn</h1>'});
-        //     addMarker({lat: 40.650002, lng: -73.949997});
-            
-        // }
-
-//         function callApi(x, y) {
-//             // AJAX request here for trails api
-//             console.log(x, y)
-
-//             // call jquary
-
-            // $.ajax({
-            //     url: "https://www.hikingproject.com/data/get-trails?lat=" + x + "&lon=" + y + "&maxDistance=50&key=200484748-f8ca8efbf0bcd4f50d87851ee05fd10a",
-            //     method: "GET"
-            // }).then(function (response) {
-            //     console.log(response)
-            //     var results=response.trails;
-            //     for(i=0; i< results.length; i++){
-
-            //         results[i].latitude
-
-            //         addMarker({
-            //             lat: results[i].latitude,
-
-            //             lng: results[i].longitude
-            //         })
-
-                    //  $.ajax({
-                    //     url: "https://www.hikingproject.com/data/get-trails?lat=" + x + "&lon=" + y + "&maxDistance=50&key=200484748-f8ca8efbf0bcd4f50d87851ee05fd10a",
-                    //     method: "GET"
-                    // }).then(handleTrails)
-// //---------------------------------------------------------
-// // Name of the trail
-
-//                     var NameDiv = $("#nameDisplay");
-//                     var TrailName = results[i].name;
-//                     var p = $("<p>").text(TrailName);
-//                     NameDiv.append(p);
-// //---------------------------------------------------------
-// // Adding location 
-
-//                     var LocationDiv = $("#LocationDisplay");
-//                     var TrailLocation = results[i].location;
-//                     var p = $("<p>").text(TrailLocation);
-//                     LocationDiv.append(p);
-// //---------------------------------------------------------
-// // Adding Rating
-//                     var TrailDiv = $("#RatingDisplay");
-//                     var rating = results[i].stars;
-//                     var p = $("<p>").text(rating);
-//                     TrailDiv.append(p);
-// //---------------------------------------------------------
-// // Adding Difficulty Display
-//                     var DifficultyDiv = $("#DifficultyDisplay");
-//                     var TrailDifficulty= results[i].difficulty;
-//                     var p = $("<p>").text("rating" + TrailDifficulty);
-//                     DifficultyDiv.append(p);
-// //---------------------------------------------------------
-// // Adding Difficulty Display
-//                     var ConditionDiv = $("#ConditionDisplay");
-//                     var details = results[i].conditionDetails;
-//                     var p = $("<p>").text("rating" + details);
-//                     ConditionDiv.append(p);
-// //----------------------------------------------------------------
-//                 }
-//             });
-//         }
-//         function initMap() {
-//         }
-    </script> -->
