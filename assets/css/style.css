@@ -9,12 +9,15 @@ body {
 .logo {
     position: absolute;
     width: 100%;
+    z-index: -1;
 }
 
 .nav-wrapper {
     font-family: 'Cabin Sketch', cursive;
     background-image: url("../images/cascade-clouds-cool-wallpaper-210186-2.jpg");
     height: 160px !important;
+    position: absolute;
+    z-index: 1;
 }
 
 .page-footer {
