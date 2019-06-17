@@ -12,6 +12,10 @@ body {
     z-index: -1;
 }
 
+.material-icons {
+    position: absolute;
+    z-index: 1;
+}
 .nav-wrapper {
     font-family: 'Cabin Sketch', cursive;
     background-image: url("../images/cascade-clouds-cool-wallpaper-210186-2.jpg");
