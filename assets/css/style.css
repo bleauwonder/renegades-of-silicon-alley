@@ -130,10 +130,8 @@ p {
 }
 
 .card {
-    /* height: 550px !important; */
     padding: 10px;
-    font-size: 2vw;
-    overflow: auto;
+    overflow-y: auto;
 }
 
 .carousel {
