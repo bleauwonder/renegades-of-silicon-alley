@@ -128,8 +128,9 @@ p {
 }
 
 .card {
-    height: 550px !important;
+    /* height: 550px !important; */
     padding: 10px;
+    overflow-y: auto;
 }
 
 .carousel {
