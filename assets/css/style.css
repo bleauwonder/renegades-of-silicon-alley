@@ -9,12 +9,15 @@ body {
 .logo {
     position: absolute;
     width: 100%;
+    z-index: -1;
 }
 
 .nav-wrapper {
     font-family: 'Cabin Sketch', cursive;
     background-image: url("../images/cascade-clouds-cool-wallpaper-210186-2.jpg");
     height: 160px !important;
+    position: absolute;
+    z-index: 1;
 }
 
 .page-footer {
@@ -117,7 +120,7 @@ body {
         background-image: url("../images/topography/topography.png");
         color: grey;
         border-radius: 15px;
-        overflow-y:visible;
+        overflow-y: scroll;
     }
 
 p {
@@ -130,8 +133,8 @@ p {
 }
 
 .card {
-    height: 550px !important;
     padding: 10px;
+    overflow-y: auto;
 }
 
 .carousel {
@@ -142,8 +145,3 @@ p {
 .carousel .carousel-item {
     width: 600px;
 }
-    /* We want display none so when you click find my trails the content appears on the page*/
-
-    /* .allContent {
-        display: none;
-    } */
