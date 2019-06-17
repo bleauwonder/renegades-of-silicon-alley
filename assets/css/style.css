@@ -117,7 +117,7 @@ body {
         background-image: url("../images/topography/topography.png");
         color: grey;
         border-radius: 15px;
-        overflow-y:visible;
+        overflow-y: scroll;
     }
 
 p {
@@ -130,8 +130,10 @@ p {
 }
 
 .card {
-    height: 550px !important;
+    /* height: 550px !important; */
     padding: 10px;
+    font-size: 2vw;
+    overflow: auto;
 }
 
 .carousel {
@@ -142,8 +144,3 @@ p {
 .carousel .carousel-item {
     width: 600px;
 }
-    /* We want display none so when you click find my trails the content appears on the page*/
-
-    /* .allContent {
-        display: none;
-    } */
